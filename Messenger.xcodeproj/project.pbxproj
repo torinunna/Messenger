@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8681AC192BD39513001CE0EF /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8681AC182BD39513001CE0EF /* Colors.xcassets */; };
 		8681AC1C2BD3954A001CE0EF /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8681AC1B2BD3954A001CE0EF /* Color+Extensions.swift */; };
+		8681AC202BD39D33001CE0EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8681AC1F2BD39D33001CE0EF /* LaunchScreen.storyboard */; };
 		868471C72BCD123F0063D163 /* MessengerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868471C62BCD123F0063D163 /* MessengerApp.swift */; };
 		868471C92BCD123F0063D163 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868471C82BCD123F0063D163 /* ContentView.swift */; };
 		868471CB2BCD12400063D163 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 868471CA2BCD12400063D163 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		8681AC182BD39513001CE0EF /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		8681AC1B2BD3954A001CE0EF /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		8681AC1F2BD39D33001CE0EF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		868471C32BCD123F0063D163 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		868471C62BCD123F0063D163 /* MessengerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerApp.swift; sourceTree = "<group>"; };
 		868471C82BCD123F0063D163 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			children = (
 				868471CA2BCD12400063D163 /* Assets.xcassets */,
 				8681AC182BD39513001CE0EF /* Colors.xcassets */,
+				8681AC1F2BD39D33001CE0EF /* LaunchScreen.storyboard */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8681AC192BD39513001CE0EF /* Colors.xcassets in Resources */,
+				8681AC202BD39D33001CE0EF /* LaunchScreen.storyboard in Resources */,
 				868471CE2BCD12400063D163 /* Preview Assets.xcassets in Resources */,
 				868471CB2BCD12400063D163 /* Assets.xcassets in Resources */,
 			);
@@ -452,7 +456,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -482,7 +486,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
