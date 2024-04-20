@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  AuthenticationView.swift
 //  Messenger
 //
 //  Created by YUJIN KWON on 4/15/24.
@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct AuthenticationView: View {
+    @StateObject var authViewModel: AutenticationViewModel
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -20,5 +22,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    AuthenticationView(authViewModel: .init())
 }
