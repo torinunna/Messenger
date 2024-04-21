@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		865255442BD4ED6C0033E485 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 865255432BD4ED6C0033E485 /* GoogleService-Info.plist */; };
 		8681AC192BD39513001CE0EF /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8681AC182BD39513001CE0EF /* Colors.xcassets */; };
 		8681AC1C2BD3954A001CE0EF /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8681AC1B2BD3954A001CE0EF /* Color+Extensions.swift */; };
 		8681AC202BD39D33001CE0EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8681AC1F2BD39D33001CE0EF /* LaunchScreen.storyboard */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		865255432BD4ED6C0033E485 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8681AC182BD39513001CE0EF /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		8681AC1B2BD3954A001CE0EF /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		8681AC1F2BD39D33001CE0EF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				868471C62BCD123F0063D163 /* MessengerApp.swift */,
+				865255432BD4ED6C0033E485 /* GoogleService-Info.plist */,
 				8681AC292BD3A028001CE0EF /* Authentication */,
 				8681AC262BD39E88001CE0EF /* Service */,
 				8681AC232BD39E60001CE0EF /* General */,
@@ -291,6 +294,7 @@
 			files = (
 				8681AC192BD39513001CE0EF /* Colors.xcassets in Resources */,
 				8681AC202BD39D33001CE0EF /* LaunchScreen.storyboard in Resources */,
+				865255442BD4ED6C0033E485 /* GoogleService-Info.plist in Resources */,
 				868471CE2BCD12400063D163 /* Preview Assets.xcassets in Resources */,
 				868471CB2BCD12400063D163 /* Assets.xcassets in Resources */,
 			);
