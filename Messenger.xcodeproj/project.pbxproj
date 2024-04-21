@@ -18,7 +18,7 @@
 		8681AC202BD39D33001CE0EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8681AC1F2BD39D33001CE0EF /* LaunchScreen.storyboard */; };
 		8681AC222BD39E5B001CE0EF /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8681AC212BD39E5B001CE0EF /* DIContainer.swift */; };
 		8681AC252BD39E85001CE0EF /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8681AC242BD39E85001CE0EF /* Services.swift */; };
-		8681AC282BD3A020001CE0EF /* AutenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8681AC272BD3A020001CE0EF /* AutenticationViewModel.swift */; };
+		8681AC282BD3A020001CE0EF /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8681AC272BD3A020001CE0EF /* AuthenticationViewModel.swift */; };
 		868471C72BCD123F0063D163 /* MessengerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868471C62BCD123F0063D163 /* MessengerApp.swift */; };
 		868471C92BCD123F0063D163 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868471C82BCD123F0063D163 /* AuthenticationView.swift */; };
 		868471CB2BCD12400063D163 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 868471CA2BCD12400063D163 /* Assets.xcassets */; };
@@ -57,7 +57,7 @@
 		8681AC1F2BD39D33001CE0EF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8681AC212BD39E5B001CE0EF /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		8681AC242BD39E85001CE0EF /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
-		8681AC272BD3A020001CE0EF /* AutenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutenticationViewModel.swift; sourceTree = "<group>"; };
+		8681AC272BD3A020001CE0EF /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		868471C32BCD123F0063D163 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		868471C62BCD123F0063D163 /* MessengerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerApp.swift; sourceTree = "<group>"; };
 		868471C82BCD123F0063D163 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				868471C82BCD123F0063D163 /* AuthenticationView.swift */,
-				8681AC272BD3A020001CE0EF /* AutenticationViewModel.swift */,
+				8681AC272BD3A020001CE0EF /* AuthenticationViewModel.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -371,7 +371,7 @@
 				8681AC222BD39E5B001CE0EF /* DIContainer.swift in Sources */,
 				868471C92BCD123F0063D163 /* AuthenticationView.swift in Sources */,
 				8681AC252BD39E85001CE0EF /* Services.swift in Sources */,
-				8681AC282BD3A020001CE0EF /* AutenticationViewModel.swift in Sources */,
+				8681AC282BD3A020001CE0EF /* AuthenticationViewModel.swift in Sources */,
 				865255502BD4F1560033E485 /* AppDelegate.swift in Sources */,
 				868471C72BCD123F0063D163 /* MessengerApp.swift in Sources */,
 				8681AC1C2BD3954A001CE0EF /* Color+Extensions.swift in Sources */,

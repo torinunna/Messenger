@@ -1,5 +1,5 @@
 //
-//  AutenticationViewModel.swift
+//  AuthenticationViewModel.swift
 //  Messenger
 //
 //  Created by YUJIN KWON on 4/20/24.
