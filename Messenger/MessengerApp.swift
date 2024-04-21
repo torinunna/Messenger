@@ -9,11 +9,12 @@ import SwiftUI
 
 @main
 struct MessengerApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject var container: DIContainer = .init(services: Services())
     
     var body: some Scene {
         WindowGroup {
-            AuthenticationView(authViewModel: .init())
+            AuthenticationView(authViewModel: .init(container: container))
                 .environmentObject(container)
         }
     }
