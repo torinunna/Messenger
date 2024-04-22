@@ -23,6 +23,7 @@ class AuthenticationViewModel: ObservableObject {
     }
     
     @Published var authenticationState: AuthenticationState = .unauthenticated
+    @Published var isLoading = false
     
     var userID: String?
     
@@ -37,31 +38,36 @@ class AuthenticationViewModel: ObservableObject {
     func send(action: Action) {
         switch action {
         case .googleLogin:
+            isLoading = true
             container.services.authService.signInWithGoogle()
                 .sink { completion in
-                    
+                    if case .failure = completion {
+                        self.isLoading = false
+                    }
                 } receiveValue: { [weak self] user in
+                    self?.isLoading = false
                     self?.userID = user.id
                 }.store(in: &subscriptions)
+            
         case let .appleLogin(request):
             let nonce = container.services.authService.handleSignInWithAppleRequest(request)
             currentNonce = nonce
+            
         case let .appleLoginCompletion(result):
             if case let .success(authorization) = result {
                 guard let nonce = currentNonce else { return }
                 
                 container.services.authService.handleSignInWithAppleCompletion(authorization, none: nonce)
-                    .sink { completion in
-                        
+                    .sink { [weak self] completion in
+                        self?.isLoading = false
                     } receiveValue: { [weak self] user in
                         self?.userID = user.id
                     }.store(in: &subscriptions)
             } else if case let .failure(error) = result {
+                isLoading = false
                 print(error.localizedDescription)
             }
         }
     }
-    
-    
 }
 
