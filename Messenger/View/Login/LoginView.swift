@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AuthenticationServices
 
 struct LoginView: View {
     @Environment(\.dismiss) var dismiss
@@ -32,11 +33,15 @@ struct LoginView: View {
                 Text("Google로 로그인")
             }.buttonStyle(LoginBtnStyle(textColor: Color.bkText, borderColor: Color.greyLight))
             
-            Button {
-                
-            } label: {
-                Text("Apple로 로그인")
-            }.buttonStyle(LoginBtnStyle(textColor: Color.bkText, borderColor: Color.greyLight))
+            
+            SignInWithAppleButton { request in
+                authViewModel.send(action: .appleLogin(request))
+            } onCompletion: { result in
+                authViewModel.send(action: .appleLoginCompletion(result))
+            }
+            .frame(height: 40)
+            .padding(.horizontal, 15)
+            .clipShape(RoundedRectangle(cornerRadius: 5))
         }
         .navigationBarBackButtonHidden()
         .toolbar {
