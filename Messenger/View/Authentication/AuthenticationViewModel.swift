@@ -21,6 +21,7 @@ class AuthenticationViewModel: ObservableObject {
         case googleLogin
         case appleLogin(ASAuthorizationAppleIDRequest)
         case appleLoginCompletion(Result<ASAuthorization, Error>)
+        case logout
     }
     
     @Published var authenticationState: AuthenticationState = .unauthenticated
@@ -79,6 +80,15 @@ class AuthenticationViewModel: ObservableObject {
                 isLoading = false
                 print(error.localizedDescription)
             }
+            
+        case .logout:
+            container.services.authService.logout()
+                .sink { completion in
+                    
+                } receiveValue: { [weak self] _ in
+                    self?.authenticationState = .unauthenticated
+                    self?.userID = nil
+                }.store(in: &subscriptions)
         }
     }
 }

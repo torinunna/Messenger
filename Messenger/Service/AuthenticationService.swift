@@ -23,6 +23,7 @@ protocol AuthenticationServiceType {
     func signInWithGoogle() -> AnyPublisher<User, ServiceError>
     func handleSignInWithAppleRequest(_ request: ASAuthorizationAppleIDRequest) -> String
     func handleSignInWithAppleCompletion(_ authorization: ASAuthorization, none: String) -> AnyPublisher<User, ServiceError>
+    func logout() -> AnyPublisher<Void, ServiceError>
 }
 
 class AuthenticationService: AuthenticationServiceType {
@@ -63,6 +64,17 @@ class AuthenticationService: AuthenticationServiceType {
                 case let .failure(error):
                     promise(.failure(.error(error)))
                 }
+            }
+        }.eraseToAnyPublisher()
+    }
+    
+    func logout() -> AnyPublisher<Void, ServiceError> {
+        Future { promise in
+            do {
+                try Auth.auth().signOut()
+                promise(.success(()))
+            } catch {
+                promise(.failure(.error(error)))
             }
         }.eraseToAnyPublisher()
     }
@@ -163,6 +175,10 @@ class StubAuthenticationService: AuthenticationServiceType {
     }
     
     func handleSignInWithAppleCompletion(_ authorization: ASAuthorization, none: String) -> AnyPublisher<User, ServiceError> {
+        Empty().eraseToAnyPublisher()
+    }
+    
+    func logout() -> AnyPublisher<Void, ServiceError> {
         Empty().eraseToAnyPublisher()
     }
 }
