@@ -47,9 +47,9 @@ class AuthenticationViewModel: ObservableObject {
         case .googleLogin:
             isLoading = true
             container.services.authService.signInWithGoogle()
-                .sink { completion in
+                .sink { [weak self] completion in
                     if case .failure = completion {
-                        self.isLoading = false
+                        self?.isLoading = false
                     }
                 } receiveValue: { [weak self] user in
                     self?.isLoading = false
@@ -67,8 +67,11 @@ class AuthenticationViewModel: ObservableObject {
                 
                 container.services.authService.handleSignInWithAppleCompletion(authorization, none: nonce)
                     .sink { [weak self] completion in
-                        self?.isLoading = false
+                        if case .failure = completion {
+                            self?.isLoading = false
+                        }
                     } receiveValue: { [weak self] user in
+                        self?.isLoading = false
                         self?.userID = user.id
                         self?.authenticationState = .authenticated
                     }.store(in: &subscriptions)
