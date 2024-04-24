@@ -36,6 +36,7 @@
 		86D2BF812BD7B24000269262 /* TabType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2BF802BD7B24000269262 /* TabType.swift */; };
 		86D2BF832BD7B31600269262 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2BF822BD7B31600269262 /* HomeView.swift */; };
 		86D2BF852BD7B31B00269262 /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2BF842BD7B31B00269262 /* ChatListView.swift */; };
+		86D2BF872BD7B4DA00269262 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2BF862BD7B4DA00269262 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		86D2BF802BD7B24000269262 /* TabType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabType.swift; sourceTree = "<group>"; };
 		86D2BF822BD7B31600269262 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		86D2BF842BD7B31B00269262 /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
+		86D2BF862BD7B4DA00269262 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				8652555A2BD4F6A40033E485 /* Login */,
 				8652555D2BD4F6BA0033E485 /* MainTab */,
 				86D2BF822BD7B31600269262 /* HomeView.swift */,
+				86D2BF862BD7B4DA00269262 /* HomeViewModel.swift */,
 				86D2BF842BD7B31B00269262 /* ChatListView.swift */,
 			);
 			path = View;
@@ -419,6 +422,7 @@
 				865255702BD6CF570033E485 /* SHA256.swift in Sources */,
 				865255682BD6454D0033E485 /* User.swift in Sources */,
 				865255632BD63AF70033E485 /* LoginBtnStyle.swift in Sources */,
+				86D2BF872BD7B4DA00269262 /* HomeViewModel.swift in Sources */,
 				8652556F2BD6CF570033E485 /* RandomNonceString.swift in Sources */,
 				865255592BD4F6A00033E485 /* LoginIntroView.swift in Sources */,
 				8681AC222BD39E5B001CE0EF /* DIContainer.swift in Sources */,
