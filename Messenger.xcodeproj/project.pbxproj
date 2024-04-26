@@ -33,6 +33,11 @@
 		868471D82BCD12400063D163 /* MessengerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868471D72BCD12400063D163 /* MessengerTests.swift */; };
 		868471E22BCD12410063D163 /* MessengerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868471E12BCD12410063D163 /* MessengerUITests.swift */; };
 		868471E42BCD12410063D163 /* MessengerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868471E32BCD12410063D163 /* MessengerUITestsLaunchTests.swift */; };
+		86C5FBE82BDB3FC000E16DC5 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C5FBE72BDB3FC000E16DC5 /* UserService.swift */; };
+		86C5FBEA2BDB3FD800E16DC5 /* UserDBRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C5FBE92BDB3FD800E16DC5 /* UserDBRepository.swift */; };
+		86C5FBED2BDB429B00E16DC5 /* UserObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C5FBEC2BDB429B00E16DC5 /* UserObject.swift */; };
+		86C5FBF02BDB42FC00E16DC5 /* DBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C5FBEF2BDB42FC00E16DC5 /* DBError.swift */; };
+		86C5FBF22BDB497000E16DC5 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C5FBF12BDB497000E16DC5 /* Constant.swift */; };
 		86D2BF812BD7B24000269262 /* TabType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2BF802BD7B24000269262 /* TabType.swift */; };
 		86D2BF832BD7B31600269262 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2BF822BD7B31600269262 /* HomeView.swift */; };
 		86D2BF852BD7B31B00269262 /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2BF842BD7B31B00269262 /* ChatListView.swift */; };
@@ -87,6 +92,11 @@
 		868471DD2BCD12400063D163 /* MessengerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MessengerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		868471E12BCD12410063D163 /* MessengerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerUITests.swift; sourceTree = "<group>"; };
 		868471E32BCD12410063D163 /* MessengerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		86C5FBE72BDB3FC000E16DC5 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		86C5FBE92BDB3FD800E16DC5 /* UserDBRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDBRepository.swift; sourceTree = "<group>"; };
+		86C5FBEC2BDB429B00E16DC5 /* UserObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserObject.swift; sourceTree = "<group>"; };
+		86C5FBEF2BDB42FC00E16DC5 /* DBError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBError.swift; sourceTree = "<group>"; };
+		86C5FBF12BDB497000E16DC5 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		86D2BF802BD7B24000269262 /* TabType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabType.swift; sourceTree = "<group>"; };
 		86D2BF822BD7B31600269262 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		86D2BF842BD7B31B00269262 /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
@@ -192,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				8681AC212BD39E5B001CE0EF /* DIContainer.swift */,
+				86C5FBF12BDB497000E16DC5 /* Constant.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -200,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				8681AC242BD39E85001CE0EF /* Services.swift */,
+				86C5FBE72BDB3FC000E16DC5 /* UserService.swift */,
 				8652556A2BD645A40033E485 /* ServiceError.swift */,
 				865255552BD4F47B0033E485 /* AuthenticationService.swift */,
 			);
@@ -243,8 +255,9 @@
 				865255542BD4F3DB0033E485 /* Info.plist */,
 				865255432BD4ED6C0033E485 /* GoogleService-Info.plist */,
 				868471C62BCD123F0063D163 /* MessengerApp.swift */,
-				865255692BD645540033E485 /* Model */,
 				8652554F2BD4F1560033E485 /* AppDelegate.swift */,
+				86C5FBEB2BDB3FDF00E16DC5 /* Repository */,
+				865255692BD645540033E485 /* Model */,
 				865255572BD4F6740033E485 /* View */,
 				8681AC262BD39E88001CE0EF /* Service */,
 				8681AC232BD39E60001CE0EF /* General */,
@@ -279,6 +292,24 @@
 				868471E32BCD12410063D163 /* MessengerUITestsLaunchTests.swift */,
 			);
 			path = MessengerUITests;
+			sourceTree = "<group>";
+		};
+		86C5FBEB2BDB3FDF00E16DC5 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				86C5FBE92BDB3FD800E16DC5 /* UserDBRepository.swift */,
+				86C5FBEF2BDB42FC00E16DC5 /* DBError.swift */,
+				86C5FBEE2BDB429E00E16DC5 /* DTO */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		86C5FBEE2BDB429E00E16DC5 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				86C5FBEC2BDB429B00E16DC5 /* UserObject.swift */,
+			);
+			path = DTO;
 			sourceTree = "<group>";
 		};
 		86EE0D2D2BDAC43F009BD327 /* Frameworks */ = {
@@ -430,9 +461,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86C5FBF02BDB42FC00E16DC5 /* DBError.swift in Sources */,
 				865255702BD6CF570033E485 /* SHA256.swift in Sources */,
 				865255682BD6454D0033E485 /* User.swift in Sources */,
 				865255632BD63AF70033E485 /* LoginBtnStyle.swift in Sources */,
+				86C5FBED2BDB429B00E16DC5 /* UserObject.swift in Sources */,
 				86D2BF872BD7B4DA00269262 /* HomeViewModel.swift in Sources */,
 				8652556F2BD6CF570033E485 /* RandomNonceString.swift in Sources */,
 				865255592BD4F6A00033E485 /* LoginIntroView.swift in Sources */,
@@ -444,9 +477,12 @@
 				86D2BF832BD7B31600269262 /* HomeView.swift in Sources */,
 				8681AC282BD3A020001CE0EF /* AuthenticationViewModel.swift in Sources */,
 				865255502BD4F1560033E485 /* AppDelegate.swift in Sources */,
+				86C5FBE82BDB3FC000E16DC5 /* UserService.swift in Sources */,
+				86C5FBF22BDB497000E16DC5 /* Constant.swift in Sources */,
 				868471C72BCD123F0063D163 /* MessengerApp.swift in Sources */,
 				8681AC1C2BD3954A001CE0EF /* Color+Extensions.swift in Sources */,
 				865255612BD50CE60033E485 /* LoginView.swift in Sources */,
+				86C5FBEA2BDB3FD800E16DC5 /* UserDBRepository.swift in Sources */,
 				865255562BD4F47B0033E485 /* AuthenticationService.swift in Sources */,
 				8652556B2BD645A40033E485 /* ServiceError.swift in Sources */,
 				8652555C2BD4F6B30033E485 /* MainTabView.swift in Sources */,
