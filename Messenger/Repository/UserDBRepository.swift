@@ -69,6 +69,8 @@ class UserDBRepository: UserDBRepositorytype {
                 if let error {
                     promise(.failure(DBError.error(error)))
                 } else if snapshot?.value is NSNull {
+                    promise(.success(nil))
+                } else {
                     promise(.success(snapshot?.value))
                 }
             }
