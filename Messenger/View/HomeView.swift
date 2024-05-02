@@ -13,6 +13,14 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             contentView
+                .fullScreenCover(item: $viewModel.modalDestination) {
+                    switch $0 {
+                    case .myProfile:
+                        MyProfileView()
+                    case let .otherProfile(userID):
+                        OtherProfileView()
+                    }
+                }
         }
     }
     
@@ -63,18 +71,24 @@ struct HomeView: View {
                 Spacer(minLength: 89)
                 emptyview
             } else {
-                ForEach(viewModel.users, id: \.id) { user in
-                    HStack(spacing: 8) {
-                        Image("person")
-                            .resizable()
-                            .frame(width: 40, height: 40)
-                            .clipShape(Circle())
-                        Text(user.name)
-                            .font(.system(size: 12))
-                            .foregroundStyle(Color.bkText)
-                        Spacer()
+                LazyVStack {
+                    ForEach(viewModel.users, id: \.id) { user in
+                        Button {
+                            viewModel.send(action: .isPresentOtherProfileView(user.id))
+                        } label: {
+                            HStack(spacing: 8) {
+                                Image("person")
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                                    .clipShape(Circle())
+                                Text(user.name)
+                                    .font(.system(size: 12))
+                                    .foregroundStyle(Color.bkText)
+                                Spacer()
+                            }
+                        }
+                        .padding(.horizontal, 30)
                     }
-                    .padding(.horizontal, 30)
                 }
             }
         }
@@ -99,6 +113,9 @@ struct HomeView: View {
                 .clipShape(Circle())
         }
         .padding(.horizontal, 30)
+        .onTapGesture {
+            viewModel.send(action: .isPresentMyProfileView)
+        }
     }
     
     var searchBtn: some View {

@@ -20,6 +20,9 @@
 		8652556B2BD645A40033E485 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8652556A2BD645A40033E485 /* ServiceError.swift */; };
 		8652556F2BD6CF570033E485 /* RandomNonceString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8652556D2BD6CF570033E485 /* RandomNonceString.swift */; };
 		865255702BD6CF570033E485 /* SHA256.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8652556E2BD6CF570033E485 /* SHA256.swift */; };
+		865AEFB82BE3825F00B38634 /* HomeModalDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865AEFB72BE3825F00B38634 /* HomeModalDestination.swift */; };
+		865AEFBA2BE3832A00B38634 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865AEFB92BE3832A00B38634 /* MyProfileView.swift */; };
+		865AEFBC2BE3833100B38634 /* OtherProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865AEFBB2BE3833100B38634 /* OtherProfileView.swift */; };
 		8681AC192BD39513001CE0EF /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8681AC182BD39513001CE0EF /* Colors.xcassets */; };
 		8681AC1C2BD3954A001CE0EF /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8681AC1B2BD3954A001CE0EF /* Color+Extensions.swift */; };
 		8681AC202BD39D33001CE0EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8681AC1F2BD39D33001CE0EF /* LaunchScreen.storyboard */; };
@@ -80,6 +83,9 @@
 		8652556C2BD6CD300033E485 /* Messenger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Messenger.entitlements; sourceTree = "<group>"; };
 		8652556D2BD6CF570033E485 /* RandomNonceString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomNonceString.swift; sourceTree = "<group>"; };
 		8652556E2BD6CF570033E485 /* SHA256.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHA256.swift; sourceTree = "<group>"; };
+		865AEFB72BE3825F00B38634 /* HomeModalDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModalDestination.swift; sourceTree = "<group>"; };
+		865AEFB92BE3832A00B38634 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
+		865AEFBB2BE3833100B38634 /* OtherProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherProfileView.swift; sourceTree = "<group>"; };
 		8681AC182BD39513001CE0EF /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		8681AC1B2BD3954A001CE0EF /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		8681AC1F2BD39D33001CE0EF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -142,12 +148,14 @@
 		865255572BD4F6740033E485 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8652555D2BD4F6BA0033E485 /* MainTab */,
 				8681AC292BD3A028001CE0EF /* Authentication */,
 				8652555A2BD4F6A40033E485 /* Login */,
-				8652555D2BD4F6BA0033E485 /* MainTab */,
 				86D2BF822BD7B31600269262 /* HomeView.swift */,
+				865AEFB72BE3825F00B38634 /* HomeModalDestination.swift */,
 				86D2BF862BD7B4DA00269262 /* HomeViewModel.swift */,
 				86D2BF842BD7B31B00269262 /* ChatListView.swift */,
+				865AEFBD2BE3834200B38634 /* Profile */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -186,6 +194,15 @@
 				8652556E2BD6CF570033E485 /* SHA256.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		865AEFBD2BE3834200B38634 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				865AEFB92BE3832A00B38634 /* MyProfileView.swift */,
+				865AEFBB2BE3833100B38634 /* OtherProfileView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		8681AC1A2BD39527001CE0EF /* Resource */ = {
@@ -484,6 +501,7 @@
 				86D2BF872BD7B4DA00269262 /* HomeViewModel.swift in Sources */,
 				8652556F2BD6CF570033E485 /* RandomNonceString.swift in Sources */,
 				86A128932BE23217006AE8EE /* PlaceholderView.swift in Sources */,
+				865AEFB82BE3825F00B38634 /* HomeModalDestination.swift in Sources */,
 				865255592BD4F6A00033E485 /* LoginIntroView.swift in Sources */,
 				8681AC222BD39E5B001CE0EF /* DIContainer.swift in Sources */,
 				86D2BF812BD7B24000269262 /* TabType.swift in Sources */,
@@ -501,7 +519,9 @@
 				86C5FBEA2BDB3FD800E16DC5 /* UserDBRepository.swift in Sources */,
 				865255562BD4F47B0033E485 /* AuthenticationService.swift in Sources */,
 				8652556B2BD645A40033E485 /* ServiceError.swift in Sources */,
+				865AEFBA2BE3832A00B38634 /* MyProfileView.swift in Sources */,
 				8652555C2BD4F6B30033E485 /* MainTabView.swift in Sources */,
+				865AEFBC2BE3833100B38634 /* OtherProfileView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
