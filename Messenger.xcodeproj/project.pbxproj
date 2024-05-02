@@ -33,6 +33,10 @@
 		868471D82BCD12400063D163 /* MessengerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868471D72BCD12400063D163 /* MessengerTests.swift */; };
 		868471E22BCD12410063D163 /* MessengerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868471E12BCD12410063D163 /* MessengerUITests.swift */; };
 		868471E42BCD12410063D163 /* MessengerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868471E32BCD12410063D163 /* MessengerUITestsLaunchTests.swift */; };
+		86A1288F2BE23111006AE8EE /* Phase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A1288E2BE23111006AE8EE /* Phase.swift */; };
+		86A128932BE23217006AE8EE /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A128922BE23217006AE8EE /* PlaceholderView.swift */; };
+		86A128972BE2323D006AE8EE /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A128962BE2323D006AE8EE /* LoadingView.swift */; };
+		86A128992BE23290006AE8EE /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A128982BE23290006AE8EE /* ErrorView.swift */; };
 		86C5FBE82BDB3FC000E16DC5 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C5FBE72BDB3FC000E16DC5 /* UserService.swift */; };
 		86C5FBEA2BDB3FD800E16DC5 /* UserDBRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C5FBE92BDB3FD800E16DC5 /* UserDBRepository.swift */; };
 		86C5FBED2BDB429B00E16DC5 /* UserObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C5FBEC2BDB429B00E16DC5 /* UserObject.swift */; };
@@ -92,6 +96,10 @@
 		868471DD2BCD12400063D163 /* MessengerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MessengerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		868471E12BCD12410063D163 /* MessengerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerUITests.swift; sourceTree = "<group>"; };
 		868471E32BCD12410063D163 /* MessengerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		86A1288E2BE23111006AE8EE /* Phase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phase.swift; sourceTree = "<group>"; };
+		86A128922BE23217006AE8EE /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
+		86A128962BE2323D006AE8EE /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		86A128982BE23290006AE8EE /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		86C5FBE72BDB3FC000E16DC5 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		86C5FBE92BDB3FD800E16DC5 /* UserDBRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDBRepository.swift; sourceTree = "<group>"; };
 		86C5FBEC2BDB429B00E16DC5 /* UserObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserObject.swift; sourceTree = "<group>"; };
@@ -202,6 +210,10 @@
 			isa = PBXGroup;
 			children = (
 				8681AC212BD39E5B001CE0EF /* DIContainer.swift */,
+				86A1288E2BE23111006AE8EE /* Phase.swift */,
+				86A128922BE23217006AE8EE /* PlaceholderView.swift */,
+				86A128962BE2323D006AE8EE /* LoadingView.swift */,
+				86A128982BE23290006AE8EE /* ErrorView.swift */,
 				86C5FBF12BDB497000E16DC5 /* Constant.swift */,
 			);
 			path = General;
@@ -466,8 +478,12 @@
 				865255682BD6454D0033E485 /* User.swift in Sources */,
 				865255632BD63AF70033E485 /* LoginBtnStyle.swift in Sources */,
 				86C5FBED2BDB429B00E16DC5 /* UserObject.swift in Sources */,
+				86A128992BE23290006AE8EE /* ErrorView.swift in Sources */,
+				86A128972BE2323D006AE8EE /* LoadingView.swift in Sources */,
+				86A1288F2BE23111006AE8EE /* Phase.swift in Sources */,
 				86D2BF872BD7B4DA00269262 /* HomeViewModel.swift in Sources */,
 				8652556F2BD6CF570033E485 /* RandomNonceString.swift in Sources */,
+				86A128932BE23217006AE8EE /* PlaceholderView.swift in Sources */,
 				865255592BD4F6A00033E485 /* LoginIntroView.swift in Sources */,
 				8681AC222BD39E5B001CE0EF /* DIContainer.swift in Sources */,
 				86D2BF812BD7B24000269262 /* TabType.swift in Sources */,
