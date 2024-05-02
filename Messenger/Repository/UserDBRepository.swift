@@ -9,13 +9,13 @@ import Foundation
 import Combine
 import FirebaseDatabase
 
-protocol UserDBRepositorytype {
+protocol UserDBRepositoryType {
     func addUser(_ object: UserObject) -> AnyPublisher<Void, DBError>
     func getUser(userId: String) -> AnyPublisher<UserObject, DBError>
     func loadUsers() -> AnyPublisher<[UserObject], DBError>
 }
 
-class UserDBRepository: UserDBRepositorytype {
+class UserDBRepository: UserDBRepositoryType {
     var db: DatabaseReference = Database.database().reference()
     
     func addUser(_ object: UserObject) -> AnyPublisher<Void, DBError> {

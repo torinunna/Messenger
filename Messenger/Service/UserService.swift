@@ -15,9 +15,9 @@ protocol UserServiceType {
 }
 
 class UserService: UserServiceType {
-    private var dbRepository: UserDBRepository
+    private var dbRepository: UserDBRepositoryType
     
-    init(dbRepository: UserDBRepository) {
+    init(dbRepository: UserDBRepositoryType) {
         self.dbRepository = dbRepository
     }
     
