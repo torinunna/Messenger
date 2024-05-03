@@ -45,6 +45,9 @@ struct MyProfileView: View {
                     }
                 }
             }
+            .task {
+                await viewModel.getUser()
+            }
         }
     }
     

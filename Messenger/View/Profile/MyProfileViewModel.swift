@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+@MainActor
 class MyProfileViewModel: ObservableObject {
     @Published var userInfo: User?
     
@@ -16,5 +18,11 @@ class MyProfileViewModel: ObservableObject {
     init(container: DIContainer, userID: String) {
         self.container = container
         self.userID = userID
+    }
+    
+    func getUser() async {
+        if let user = try? await container.services.userService.getUser(userID: userID) {
+            userInfo = user
+        }
     }
 }
