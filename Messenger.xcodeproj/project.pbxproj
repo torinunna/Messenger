@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		861DC32D2BE4F42400D29C56 /* MyProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861DC32C2BE4F42400D29C56 /* MyProfileViewModel.swift */; };
+		861DC32F2BE4F6F000D29C56 /* MyProfileMenuType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861DC32E2BE4F6F000D29C56 /* MyProfileMenuType.swift */; };
 		865255442BD4ED6C0033E485 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 865255432BD4ED6C0033E485 /* GoogleService-Info.plist */; };
 		865255502BD4F1560033E485 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8652554F2BD4F1560033E485 /* AppDelegate.swift */; };
 		865255532BD4F2910033E485 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 865255522BD4F2910033E485 /* FirebaseAuth */; };
@@ -71,6 +73,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		861DC32C2BE4F42400D29C56 /* MyProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewModel.swift; sourceTree = "<group>"; };
+		861DC32E2BE4F6F000D29C56 /* MyProfileMenuType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileMenuType.swift; sourceTree = "<group>"; };
 		865255432BD4ED6C0033E485 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8652554F2BD4F1560033E485 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		865255542BD4F3DB0033E485 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -202,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				865AEFB92BE3832A00B38634 /* MyProfileView.swift */,
+				861DC32C2BE4F42400D29C56 /* MyProfileViewModel.swift */,
 				865AEFBB2BE3833100B38634 /* OtherProfileView.swift */,
 			);
 			path = Profile;
@@ -262,6 +267,7 @@
 		868471BA2BCD123F0063D163 = {
 			isa = PBXGroup;
 			children = (
+				861DC32E2BE4F6F000D29C56 /* MyProfileMenuType.swift */,
 				868471C52BCD123F0063D163 /* Messenger */,
 				868471D62BCD12400063D163 /* MessengerTests */,
 				868471E02BCD12410063D163 /* MessengerUITests */,
@@ -515,6 +521,7 @@
 				86D2BF832BD7B31600269262 /* HomeView.swift in Sources */,
 				8681AC282BD3A020001CE0EF /* AuthenticationViewModel.swift in Sources */,
 				865255502BD4F1560033E485 /* AppDelegate.swift in Sources */,
+				861DC32D2BE4F42400D29C56 /* MyProfileViewModel.swift in Sources */,
 				86C5FBE82BDB3FC000E16DC5 /* UserService.swift in Sources */,
 				86C5FBF22BDB497000E16DC5 /* Constant.swift in Sources */,
 				868471C72BCD123F0063D163 /* MessengerApp.swift in Sources */,
@@ -525,6 +532,7 @@
 				8652556B2BD645A40033E485 /* ServiceError.swift in Sources */,
 				865AEFBA2BE3832A00B38634 /* MyProfileView.swift in Sources */,
 				8652555C2BD4F6B30033E485 /* MainTabView.swift in Sources */,
+				861DC32F2BE4F6F000D29C56 /* MyProfileMenuType.swift in Sources */,
 				865AEFBC2BE3833100B38634 /* OtherProfileView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
