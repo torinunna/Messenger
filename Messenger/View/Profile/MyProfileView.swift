@@ -70,11 +70,18 @@ struct MyProfileView: View {
     
     var descriptionView: some View {
         Button {
-            
+            viewModel.isPresentedDescEditView.toggle()
         } label: {
             Text(viewModel.userInfo?.description ?? "상태메세지를 입력해주세요.")
                 .font(.system(size: 14))
                 .foregroundStyle(Color.bgWh)
+        }
+        .sheet(isPresented: $viewModel.isPresentedDescEditView) {
+            MyProfileDescEditView(description: viewModel.userInfo?.description ?? "") { willBeDesc in
+                Task {
+                    await viewModel.updateDescription(willBeDesc)
+                }
+            }
         }
     }
     
