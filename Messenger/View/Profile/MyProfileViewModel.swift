@@ -49,8 +49,12 @@ class MyProfileViewModel: ObservableObject {
         
         do {
             let data = try await container.services.photosPickerService.loadTransferable(from: pickerItem)
-        } catch {
+            let url = try await container.services.uploadService.uploadImage(source: .profile(userID: userID), data: data)
+            try await container.services.userService.updateUserProfileURL(userID: userID, urlString: url.absoluteString)
             
+            userInfo?.profileURL = url.absoluteString
+        } catch {
+            print(error.localizedDescription)
         }
     }
 }

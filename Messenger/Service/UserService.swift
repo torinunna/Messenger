@@ -14,6 +14,7 @@ protocol UserServiceType {
     func getUser(userID: String) -> AnyPublisher<User, ServiceError>
     func getUser(userID: String) async throws -> User
     func updateDescription(userID: String, description: String) async throws
+    func updateUserProfileURL(userID: String, urlString: String) async throws
     func loadUsers(id: String) -> AnyPublisher<[User], ServiceError>
 }
 
@@ -53,6 +54,10 @@ class UserService: UserServiceType {
         try await dbRepository.updateDescription(userID: userID, key: "description", value: description)
     }
     
+    func updateUserProfileURL(userID: String, urlString: String) async throws {
+        try await dbRepository.updateDescription(userID: userID, key: "profileURL", value: urlString)
+    }
+    
     func loadUsers(id: String) -> AnyPublisher<[User], ServiceError> {
         dbRepository.loadUsers()
             .map { $0
@@ -82,6 +87,10 @@ class StubUserService: UserServiceType {
     }
     
     func updateDescription(userID: String, description: String) async throws {
+        
+    }
+    
+    func updateUserProfileURL(userID: String, urlString: String) async throws {
         
     }
     
