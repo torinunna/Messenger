@@ -51,11 +51,11 @@ class UserService: UserServiceType {
     }
     
     func updateDescription(userID: String, description: String) async throws {
-        try await dbRepository.updateDescription(userID: userID, key: "description", value: description)
+        try await dbRepository.updateUser(userID: userID, key: "description", value: description)
     }
     
     func updateUserProfileURL(userID: String, urlString: String) async throws {
-        try await dbRepository.updateDescription(userID: userID, key: "profileURL", value: urlString)
+        try await dbRepository.updateUser(userID: userID, key: "profileURL", value: urlString)
     }
     
     func loadUsers(id: String) -> AnyPublisher<[User], ServiceError> {

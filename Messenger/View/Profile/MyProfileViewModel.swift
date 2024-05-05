@@ -40,7 +40,7 @@ class MyProfileViewModel: ObservableObject {
             try await container.services.userService.updateDescription(userID: userID, description: description)
             userInfo?.description = description
         } catch {
-            
+            print(error.localizedDescription)
         }
     }
     
