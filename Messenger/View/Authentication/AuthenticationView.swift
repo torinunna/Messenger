@@ -22,7 +22,7 @@ struct AuthenticationView: View {
             }
         }
         .onAppear {
-            authViewModel.send(action: .logout)
+            authViewModel.send(action: .checkAuthenticationState)
         }
     }
 }
