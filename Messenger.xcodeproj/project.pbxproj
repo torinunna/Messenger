@@ -40,6 +40,8 @@
 		868471D82BCD12400063D163 /* MessengerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868471D72BCD12400063D163 /* MessengerTests.swift */; };
 		868471E22BCD12410063D163 /* MessengerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868471E12BCD12410063D163 /* MessengerUITests.swift */; };
 		868471E42BCD12410063D163 /* MessengerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868471E32BCD12410063D163 /* MessengerUITestsLaunchTests.swift */; };
+		86910F1B2BE79E0D0031043B /* PhotosPickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86910F1A2BE79E0D0031043B /* PhotosPickerService.swift */; };
+		86910F1E2BE79F040031043B /* PhotoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86910F1D2BE79F040031043B /* PhotoImage.swift */; };
 		86A1288F2BE23111006AE8EE /* Phase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A1288E2BE23111006AE8EE /* Phase.swift */; };
 		86A128932BE23217006AE8EE /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A128922BE23217006AE8EE /* PlaceholderView.swift */; };
 		86A128972BE2323D006AE8EE /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A128962BE2323D006AE8EE /* LoadingView.swift */; };
@@ -110,6 +112,8 @@
 		868471DD2BCD12400063D163 /* MessengerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MessengerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		868471E12BCD12410063D163 /* MessengerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerUITests.swift; sourceTree = "<group>"; };
 		868471E32BCD12410063D163 /* MessengerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		86910F1A2BE79E0D0031043B /* PhotosPickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPickerService.swift; sourceTree = "<group>"; };
+		86910F1D2BE79F040031043B /* PhotoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoImage.swift; sourceTree = "<group>"; };
 		86A1288E2BE23111006AE8EE /* Phase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phase.swift; sourceTree = "<group>"; };
 		86A128922BE23217006AE8EE /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
 		86A128962BE2323D006AE8EE /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -159,11 +163,11 @@
 				8652555D2BD4F6BA0033E485 /* MainTab */,
 				8681AC292BD3A028001CE0EF /* Authentication */,
 				8652555A2BD4F6A40033E485 /* Login */,
+				865AEFBD2BE3834200B38634 /* Profile */,
 				86D2BF822BD7B31600269262 /* HomeView.swift */,
 				865AEFB72BE3825F00B38634 /* HomeModalDestination.swift */,
 				86D2BF862BD7B4DA00269262 /* HomeViewModel.swift */,
 				86D2BF842BD7B31B00269262 /* ChatListView.swift */,
-				865AEFBD2BE3834200B38634 /* Profile */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -252,6 +256,7 @@
 				8681AC242BD39E85001CE0EF /* Services.swift */,
 				865AEFC02BE3962F00B38634 /* ContactServcie.swift */,
 				86C5FBE72BDB3FC000E16DC5 /* UserService.swift */,
+				86910F1C2BE79EEC0031043B /* PhotosPicker */,
 				8652556A2BD645A40033E485 /* ServiceError.swift */,
 				865255552BD4F47B0033E485 /* AuthenticationService.swift */,
 			);
@@ -333,6 +338,15 @@
 				868471E32BCD12410063D163 /* MessengerUITestsLaunchTests.swift */,
 			);
 			path = MessengerUITests;
+			sourceTree = "<group>";
+		};
+		86910F1C2BE79EEC0031043B /* PhotosPicker */ = {
+			isa = PBXGroup;
+			children = (
+				86910F1A2BE79E0D0031043B /* PhotosPickerService.swift */,
+				86910F1D2BE79F040031043B /* PhotoImage.swift */,
+			);
+			path = PhotosPicker;
 			sourceTree = "<group>";
 		};
 		86C5FBEB2BDB3FDF00E16DC5 /* Repository */ = {
@@ -513,6 +527,7 @@
 				86D2BF872BD7B4DA00269262 /* HomeViewModel.swift in Sources */,
 				8652556F2BD6CF570033E485 /* RandomNonceString.swift in Sources */,
 				86A128932BE23217006AE8EE /* PlaceholderView.swift in Sources */,
+				86910F1B2BE79E0D0031043B /* PhotosPickerService.swift in Sources */,
 				865AEFB82BE3825F00B38634 /* HomeModalDestination.swift in Sources */,
 				865255592BD4F6A00033E485 /* LoginIntroView.swift in Sources */,
 				8681AC222BD39E5B001CE0EF /* DIContainer.swift in Sources */,
@@ -523,6 +538,7 @@
 				8681AC252BD39E85001CE0EF /* Services.swift in Sources */,
 				86D2BF832BD7B31600269262 /* HomeView.swift in Sources */,
 				8681AC282BD3A020001CE0EF /* AuthenticationViewModel.swift in Sources */,
+				86910F1E2BE79F040031043B /* PhotoImage.swift in Sources */,
 				865255502BD4F1560033E485 /* AppDelegate.swift in Sources */,
 				861DC32D2BE4F42400D29C56 /* MyProfileViewModel.swift in Sources */,
 				86C5FBE82BDB3FC000E16DC5 /* UserService.swift in Sources */,
