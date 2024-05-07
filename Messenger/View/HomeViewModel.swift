@@ -15,6 +15,7 @@ class HomeViewModel: ObservableObject {
         case requestContacts
         case isPresentMyProfileView
         case isPresentOtherProfileView(String)
+        case goToChat(User)
     }
     
     @Published var myUser: User?
@@ -75,6 +76,14 @@ class HomeViewModel: ObservableObject {
             
         case let .isPresentOtherProfileView(userID):
             modalDestination = .otherProfile(userID)
+            
+        case let .goToChat(otherUser):
+            container.services.chatRoomService.createChatRoomIfNeeded(myUserID: userID, otherUserID: otherUser.id, otherUserName: otherUser.name)
+                .sink { completion in
+                    
+                } receiveValue: { chatRoom in
+                    
+                }.store(in: &subscriptions)
         }
     }
 }

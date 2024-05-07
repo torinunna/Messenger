@@ -10,6 +10,8 @@ import SwiftUI
 struct OtherProfileView: View {
     @Environment(\.dismiss) var dismiss
     @StateObject var viewModel: OtherProfileViewModel
+    
+    var goTocChat: (User) -> Void
    
     var body: some View {
         NavigationStack {
@@ -57,6 +59,10 @@ struct OtherProfileView: View {
             ForEach(OtherProfileMenuType.allCases, id: \.self) { menu in
                 VStack {
                     Button {
+                        if menu == .chat, let userInfo = viewModel.userInfo {
+                            dismiss()
+                            goTocChat(userInfo)
+                        }
                     } label: {
                         VStack(alignment: .center) {
                             Image(menu.imageName)
@@ -76,5 +82,6 @@ struct OtherProfileView: View {
 }
 
 #Preview {
-    OtherProfileView(viewModel: .init(container: DIContainer(services: StubService()), userID: "user1_id"))
+    OtherProfileView(viewModel: .init(container: DIContainer(services: StubService()), userID: "user1_id")) { _ in
+    }
 }
