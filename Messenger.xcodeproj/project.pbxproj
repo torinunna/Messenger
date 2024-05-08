@@ -72,6 +72,7 @@
 		86D2BF852BD7B31B00269262 /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2BF842BD7B31B00269262 /* ChatListView.swift */; };
 		86D2BF872BD7B4DA00269262 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2BF862BD7B4DA00269262 /* HomeViewModel.swift */; };
 		86DEEB572BEBC86C008FBCA0 /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DEEB562BEBC86C008FBCA0 /* SearchButton.swift */; };
+		86DEEB5E2BEBCEB1008FBCA0 /* NavigationRoutingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DEEB5D2BEBCEB1008FBCA0 /* NavigationRoutingView.swift */; };
 		86EDD7D92BE9F37200B08AE7 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EDD7D82BE9F37200B08AE7 /* NavigationRouter.swift */; };
 		86EDD7DB2BE9F39C00B08AE7 /* NavigationDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EDD7DA2BE9F39C00B08AE7 /* NavigationDestination.swift */; };
 		86EDD7DD2BE9F3F700B08AE7 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EDD7DC2BE9F3F700B08AE7 /* ChatView.swift */; };
@@ -163,6 +164,7 @@
 		86D2BF842BD7B31B00269262 /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
 		86D2BF862BD7B4DA00269262 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		86DEEB562BEBC86C008FBCA0 /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
+		86DEEB5D2BEBCEB1008FBCA0 /* NavigationRoutingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRoutingView.swift; sourceTree = "<group>"; };
 		86EDD7D82BE9F37200B08AE7 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		86EDD7DA2BE9F39C00B08AE7 /* NavigationDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDestination.swift; sourceTree = "<group>"; };
 		86EDD7DC2BE9F3F700B08AE7 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
@@ -479,6 +481,7 @@
 			isa = PBXGroup;
 			children = (
 				86EDD7D82BE9F37200B08AE7 /* NavigationRouter.swift */,
+				86DEEB5D2BEBCEB1008FBCA0 /* NavigationRoutingView.swift */,
 				86EDD7DA2BE9F39C00B08AE7 /* NavigationDestination.swift */,
 			);
 			path = Navigation;
@@ -684,6 +687,7 @@
 				86C5FBEA2BDB3FD800E16DC5 /* UserDBRepository.swift in Sources */,
 				865255562BD4F47B0033E485 /* AuthenticationService.swift in Sources */,
 				8652556B2BD645A40033E485 /* ServiceError.swift in Sources */,
+				86DEEB5E2BEBCEB1008FBCA0 /* NavigationRoutingView.swift in Sources */,
 				865AEFBA2BE3832A00B38634 /* MyProfileView.swift in Sources */,
 				8652555C2BD4F6B30033E485 /* MainTabView.swift in Sources */,
 				86910F372BE8AC1E0031043B /* URLImageViewModel.swift in Sources */,
