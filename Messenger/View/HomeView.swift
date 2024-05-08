@@ -68,8 +68,10 @@ struct HomeView: View {
             profileView
                 .padding(.bottom, 30)
             
-            searchBtn
-                .padding(.bottom, 24)
+            NavigationLink(value: NavigationDestination.search) {
+                SearchButton()
+            }
+            .padding(.bottom, 24)
             
             HStack {
                 Text("친구")
@@ -127,27 +129,6 @@ struct HomeView: View {
         .padding(.horizontal, 30)
         .onTapGesture {
             viewModel.send(action: .isPresentMyProfileView)
-        }
-    }
-    
-    var searchBtn: some View {
-        NavigationLink(value: NavigationDestination.search) {
-            ZStack {
-                Rectangle()
-                    .foregroundStyle(Color.clear)
-                    .frame(height: 36)
-                    .background(Color.greyCool)
-                    .clipShape(RoundedRectangle(cornerRadius: 5))
-
-                HStack {
-                    Text("검색")
-                        .font(.system(size: 12))
-                        .foregroundStyle(Color.greyLightVer2)
-                    Spacer()
-                }
-                .padding(.leading, 22)
-            }
-            .padding(.horizontal, 30)
         }
     }
     
