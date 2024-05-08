@@ -9,7 +9,8 @@ import SwiftUI
 
 struct AuthenticationView: View {
     @StateObject var authViewModel: AuthenticationViewModel
-    
+    @StateObject var navigationRouter: NavigationRouter
+
     var body: some View {
         VStack {
             switch authViewModel.authenticationState {
@@ -19,6 +20,7 @@ struct AuthenticationView: View {
             case .authenticated:
                 MainTabView()
                     .environmentObject(authViewModel)
+                    .environmentObject(navigationRouter)
             }
         }
         .onAppear {
@@ -28,5 +30,5 @@ struct AuthenticationView: View {
 }
 
 #Preview {
-    AuthenticationView(authViewModel: .init(container: .init(services: StubService())))
+    AuthenticationView(authViewModel: .init(container: .init(services: StubService())), navigationRouter: .init())
 }

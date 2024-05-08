@@ -11,7 +11,7 @@ struct OtherProfileView: View {
     @Environment(\.dismiss) var dismiss
     @StateObject var viewModel: OtherProfileViewModel
     
-    var goTocChat: (User) -> Void
+    var goToChat: (User) -> Void
    
     var body: some View {
         NavigationStack {
@@ -61,7 +61,7 @@ struct OtherProfileView: View {
                     Button {
                         if menu == .chat, let userInfo = viewModel.userInfo {
                             dismiss()
-                            goTocChat(userInfo)
+                            goToChat(userInfo)
                         }
                     } label: {
                         VStack(alignment: .center) {

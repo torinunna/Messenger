@@ -14,7 +14,7 @@ struct MessengerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            AuthenticationView(authViewModel: .init(container: container))
+            AuthenticationView(authViewModel: .init(container: container), navigationRouter: .init())
                 .environmentObject(container)
         }
     }

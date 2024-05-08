@@ -36,7 +36,7 @@ class ChatRoomDBRepository: ChatRoomDBRepositoryType {
                     .mapError { DBError.error($0) }
                     .eraseToAnyPublisher()
             } else {
-                return Fail(error: .emptyValue).eraseToAnyPublisher()
+                return Just(nil).setFailureType(to: DBError.self).eraseToAnyPublisher()
             }
         }
         .eraseToAnyPublisher()
