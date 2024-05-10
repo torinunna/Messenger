@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct NavigationRoutingView: View {
+    @EnvironmentObject var container: DIContainer
     @State var destination: NavigationDestination
     
     var body: some View {
         switch destination {
-        case .chat:
-            ChatView()
+        case let .chat(chatroomID, myUserID, otherUserID):
+            ChatView(viewModel: .init(container: container, chatRoomID: chatroomID, myUserID: myUserID, otherUserID: otherUserID))
         case .search:
             SearchView()
         }
