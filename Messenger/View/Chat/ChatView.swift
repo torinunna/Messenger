@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct ChatView: View {
     @EnvironmentObject var navigationRouter: NavigationRouter
@@ -55,9 +56,7 @@ struct ChatView: View {
                     Image("other_add")
                 }
                 
-                Button {
-                    
-                } label: {
+                PhotosPicker(selection: $viewModel.imageSelection, matching: .images) {
                     Image("image_add")
                 }
                 
@@ -95,7 +94,11 @@ struct ChatView: View {
         ForEach(viewModel.chatDataList) { chatData in
             Section {
                 ForEach(chatData.chats) { chat in
-                    ChatItemView(message: chat.message ?? "", direction: viewModel.getDirection(id: chat.userID), date: chat.date)
+                    if let message = chat.message {
+                        ChatItemView(message: message, direction: viewModel.getDirection(id: chat.userID), date: chat.date)
+                    } else if let photoURL = chat.photoURL {
+                        ChatImageItemView(urlString: photoURL, direction: viewModel.getDirection(id: chat.userID))
+                    }
                 }
             } header: {
                 headerView(dateStr: chatData.dateStr)

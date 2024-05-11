@@ -5,19 +5,26 @@
 //  Created by YUJIN KWON on 5/10/24.
 //
 
-import Foundation
 import Combine
+import SwiftUI
+import PhotosUI
 
 class ChatViewModel: ObservableObject {
     enum Action {
         case load
         case addChat(String)
+        case uploadImage(PhotosPickerItem?)
     }
     
     @Published var chatDataList: [ChatData] = []
     @Published var myUser: User?
     @Published var otherUser: User?
     @Published var message: String = ""
+    @Published var imageSelection: PhotosPickerItem? {
+        didSet {
+            send(action: .uploadImage(imageSelection))
+        }
+    }
     
     private let chatRoomID: String
     private let myUserID: String
@@ -78,6 +85,23 @@ class ChatViewModel: ObservableObject {
                     
                 } receiveValue: { [weak self] _ in
                     self?.message = ""
+                }.store(in: &subscriptions)
+
+        case let .uploadImage(pickerItem):
+            guard let pickerItem else { return }
+            
+            container.services.photosPickerService.loadTransferable(from: pickerItem)
+                .flatMap { data in
+                    self.container.services.uploadService.uploadImage(source: .chat(chatRoomID: self.chatRoomID), data: data)
+                }
+                .flatMap { url in
+                    let chat: Chat = .init(chatID: UUID().uuidString, userID: self.myUserID, photoURL: url.absoluteString, date: Date())
+                    return self.container.services.chatService.addChat(chat, to: self.chatRoomID)
+                }
+                .sink { _ in
+                    
+                } receiveValue: { _ in
+                    
                 }.store(in: &subscriptions)
 
         }
