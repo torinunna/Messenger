@@ -1,27 +1,26 @@
 //
-//  Chat.swift
+//  ChatObject.swift
 //  Messenger
 //
-//  Created by YUJIN KWON on 5/10/24.
+//  Created by YUJIN KWON on 5/11/24.
 //
 
 import Foundation
 
-struct Chat: Hashable, Identifiable {
+struct ChatObject: Codable {
     var chatID: String
     var userID: String
     var message: String?
     var photoURL: String?
-    var date: Date
-    var id: String { chatID }
+    var date: TimeInterval
 }
 
-extension Chat {
-    func toObject() -> ChatObject {
+extension ChatObject {
+    func toModel() -> Chat {
         .init(chatID: chatID,
               userID: userID,
               message: message,
               photoURL: photoURL,
-              date: date.timeIntervalSince1970)
+              date: Date(timeIntervalSince1970: date))
     }
 }

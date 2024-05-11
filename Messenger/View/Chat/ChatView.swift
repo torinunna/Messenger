@@ -33,7 +33,7 @@ struct ChatView: View {
                         Image("back")
                     }
                     
-                    Text(viewModel.otherUSer?.name ?? "대화방이름")
+                    Text(viewModel.otherUser?.name ?? "대화방이름")
                         .font(.system(size: 20, weight: .bold))
                         .foregroundStyle(Color.bkText)
                 }
@@ -77,12 +77,17 @@ struct ChatView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                 
                 Button {
-                    
+                    viewModel.send(action: .addChat(viewModel.message))
+                    isFocused = false
                 } label: {
                     Image("send")
                 }
+                .disabled(viewModel.message.isEmpty)
             }
             .padding(.horizontal, 20)
+        }
+        .onAppear {
+            viewModel.send(action: .load)
         }
     }
     
