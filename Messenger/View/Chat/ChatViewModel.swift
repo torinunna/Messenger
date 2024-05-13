@@ -81,6 +81,13 @@ class ChatViewModel: ObservableObject {
             let chat: Chat = .init(chatID: UUID().uuidString, userID: myUserID, message: message, date: Date())
             
             container.services.chatService.addChat(chat, to: chatRoomID)
+                .flatMap { chat in
+                    self.container.services.chatRoomService.updateChatRoomLastMessage(chatRoomID: self.chatRoomID,
+                                                                                      myUserID: self.myUserID,
+                                                                                      myUserName: self.myUser?.name ?? "",
+                                                                                      otherUserID: self.otherUserID,
+                                                                                      lastMessage: chat.lastMessage)
+                }
                 .sink { completion in
                     
                 } receiveValue: { [weak self] _ in
@@ -97,6 +104,13 @@ class ChatViewModel: ObservableObject {
                 .flatMap { url in
                     let chat: Chat = .init(chatID: UUID().uuidString, userID: self.myUserID, photoURL: url.absoluteString, date: Date())
                     return self.container.services.chatService.addChat(chat, to: self.chatRoomID)
+                }
+                .flatMap { chat in
+                    self.container.services.chatRoomService.updateChatRoomLastMessage(chatRoomID: self.chatRoomID,
+                                                                                      myUserID: self.myUserID,
+                                                                                      myUserName: self.myUser?.name ?? "",
+                                                                                      otherUserID: self.otherUserID,
+                                                                                      lastMessage: chat.lastMessage)
                 }
                 .sink { _ in
                     

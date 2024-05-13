@@ -13,6 +13,7 @@ protocol ChatRoomDBRepositoryType {
     func getChatRoom(myUserID: String, otherUserID: String) -> AnyPublisher<ChatRoomObject?, DBError>
     func addChatRoom(_ object: ChatRoomObject, myUserId: String) -> AnyPublisher<Void, DBError>
     func loadChatRoom(myUserID: String) -> AnyPublisher<[ChatRoomObject], DBError>
+    func updateChatRoomLastMessage(chatRoomID: String, myUserID: String, myUserName: String, otherUserID: String, lastMessage: String) -> AnyPublisher<Void, DBError>
 }
 
 class ChatRoomDBRepository: ChatRoomDBRepositoryType {
@@ -88,6 +89,28 @@ class ChatRoomDBRepository: ChatRoomDBRepositoryType {
                 return Fail(error: .invalidatedType).eraseToAnyPublisher()
             }
         }
+        .eraseToAnyPublisher()
+    }
+    
+    func updateChatRoomLastMessage(chatRoomID: String, myUserID: String, myUserName: String, otherUserID: String, lastMessage: String) -> AnyPublisher<Void, DBError> {
+        Future { [weak self] promise in
+        let values =  [
+            "\(DBKey.ChatRooms)/\(myUserID)/\(otherUserID)/lastMessage" : lastMessage,
+            "\(DBKey.ChatRooms)/\(otherUserID)/\(myUserID)/lastMessage" : lastMessage,
+            "\(DBKey.ChatRooms)/\(otherUserID)/\(myUserID)/chatRoomID" : chatRoomID,
+            "\(DBKey.ChatRooms)/\(otherUserID)/\(myUserID)/otherUserName" : myUserName,
+            "\(DBKey.ChatRooms)/\(otherUserID)/\(myUserID)/otherUserID" : myUserID
+            ]
+            
+            self?.db.updateChildValues(values) { error, _ in
+                if let error {
+                    promise(.failure(error))
+                } else {
+                    promise(.success(()))
+                }
+            }
+        }
+        .mapError { .error($0) }
         .eraseToAnyPublisher()
     }
 }
