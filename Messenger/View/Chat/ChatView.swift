@@ -14,11 +14,17 @@ struct ChatView: View {
     @FocusState private var isFocused: Bool
     
     var body: some View {
-        ScrollView {
-            if viewModel.chatDataList.isEmpty {
-                Color.chatBg
-            } else {
-                contentView
+        ScrollViewReader { proxy in
+            ScrollView {
+                if viewModel.chatDataList.isEmpty {
+                    Color.chatBg
+                } else {
+                    contentView
+                }
+            }
+            .onChange(of: viewModel.chatDataList.last?.chats) {
+                newValue in
+                proxy.scrollTo(newValue?.last?.id, anchor: .bottom)
             }
         }
         .background(Color.chatBg)
@@ -95,9 +101,14 @@ struct ChatView: View {
             Section {
                 ForEach(chatData.chats) { chat in
                     if let message = chat.message {
-                        ChatItemView(message: message, direction: viewModel.getDirection(id: chat.userID), date: chat.date)
+                        ChatItemView(message: message, 
+                                     direction: viewModel.getDirection(id: chat.userID), 
+                                     date: chat.date)
+                            .id(chat.chatID)
                     } else if let photoURL = chat.photoURL {
-                        ChatImageItemView(urlString: photoURL, direction: viewModel.getDirection(id: chat.userID))
+                        ChatImageItemView(urlString: photoURL, 
+                                          direction: viewModel.getDirection(id: chat.userID))
+                            .id(chat.chatID)
                     }
                 }
             } header: {
